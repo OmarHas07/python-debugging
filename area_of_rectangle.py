@@ -29,6 +29,9 @@ def area_of_rectangle(height, width = None):
     >>> area_of_rectangle (7, 2)
     14
     """
+    height = int(height) 
+    width = int(width) 
+
     if width:
         width = height
     import pdb; pdb.set_trace()
@@ -44,13 +47,16 @@ if __name__ == '__main__':
         sys.exit(message)
     height = sys.argv[1]
     width = height
-    if len(sys.argv) > 3:
-        width = sys.argv[1]
+    if len(sys.argv) ==  3:
+        width = int(sys.argv[2])
+        height = int(sys.argv[1])
+    else: 
+        width = int(sys.argv[1])
+        height = int(sys.argv[1])
+area = height * width
 
-    area = area_of_rectangle(height, width)
-
-    message = "The area of a {h} X {w} rectangle is {a}".format(
+message = "The area of a {h} X {w} rectangle is {a}".format(
             h = height,
             w = width,
             a = area)
-    print(message)
+print(message)
